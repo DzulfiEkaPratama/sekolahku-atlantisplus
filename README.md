@@ -7,7 +7,7 @@ Sekolahku adalah aplikasi manajemen sekolah berbasis website yang di bangun dan 
 ## Installation
 
 * Install [Composer](https://getcomposer.org/download) and [Npm](https://nodejs.org/en/download)
-* Clone the repository: `git clone https://github.com/DzulfiEkaPratama/sekolahku.git`
+* Clone the repository: `git clone https://github.com/DzulfiEkaPratama/sekolahku-atlantisplus.git`
 * Install dependencies: `composer install ; npm install ; npm run dev`
 * Run `cp .env.example .env` for create .env file
 * Run `php artisan migrate --seed` for migration database
