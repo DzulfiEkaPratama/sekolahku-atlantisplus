@@ -67,16 +67,42 @@ Pengajar
                                                 <td> {{$pengajars->userDetail->nip}} </td>
                                                 <td> {{$pengajars->email}} </td>
                                                 <td> {{$pengajars->status == 'Aktif' ? 'Aktif' : 'Tidak Aktif'}} </td>
-                                                <td class="picker__select--year"><a href=" {{route('backend-pengguna-pengajar.edit', $pengajars->id)}} "
+                                                <td class="picker__select--year"><a
+                                                        href=" {{route('backend-pengguna-pengajar.edit', $pengajars->id)}} "
                                                         class="btn btn-success btn-sm">Edit</a>
-
-                                                    <form action="{{ url('delete_pengajar/'.$pengajars->id) }}" method="post"
-                                                        class="d-inline" onsubmit="return confirm('Yakin Hapus Data?')">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <button class="btn btn-danger btn-sm">
-                                                            <div class="fa fa-trash">Delete</div>
-                                                        </button></form>
+                                                    {{-- button modal --}}
+                                                    <button class="btn btn-danger btn-sm" data-toggle="modal"
+                                                        data-target="#modalDelete">
+                                                        <div class="fa fa-trash">Hapus</div>
+                                                    </button>
+                                                    {{-- modal --}}
+                                                    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog"
+                                                        aria-labelledby="modalDeleteLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="modalDeleteLabel">
+                                                                        Konfirmasi Hapus</h5>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Yakin ingin menghapus data ini?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-warning"
+                                                                        data-dismiss="modal">Cancel</button>
+                                                                    <form
+                                                                        action="{{ url('delete_pengajar/'. $pengajars->id) }}"
+                                                                        method="post">
+                                                                        @method('delete')
+                                                                        @csrf
+                                                                        <button type="submit"
+                                                                            class="btn btn-danger">Hapus</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{-- akhir modal --}}
                                                 </td>
                                             </tr>
                                             @endforeach
