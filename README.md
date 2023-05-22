@@ -19,6 +19,11 @@ Download tools pendukung:
 3. Node Js: https://nodejs.org/en/download/
 4. Git Bash: https://git-scm.com/download/win
 
+Default Account for testing
+Admin Default Account:
+● email: kepsek@sch.id
+● Password: Bismillah
+
 Note : Aplikasi ini akan terus saya update.<br>
 Jika ada pertanyaan bisa kontak aku di email ini <b>dzulfiekapratama26@gmail.com</b>
 </p>
